@@ -1,0 +1,13 @@
+
+
+Id etudiant : 2     Nom de l'etudiant : linuux     Prenom de l'etudiant : node     Adresse mail : gmail     Numero d'inscrit : 1222222
+
+
+
+
+Id etudiant : 4     Nom de l'etudiant : SAFA     Prenom de l'etudiant : TOUNAKTI     Adresse mail : @GMAIL.COM     Numero d'inscrit : 4
+
+
+
+Id etudiant : 5     Nom de l'etudiant : safa     Prenom de l'etudiant : Tiunakti     Adresse mail : t@gmail     Numero d'inscrit : 89
+

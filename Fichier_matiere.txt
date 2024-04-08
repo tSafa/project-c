@@ -1,0 +1,12 @@
+Idmatiere : 56565      Nom de la matiere : nomodif      Le coefficient de la matiere : 58.000000      L'id de l'enseignant : 2
+
+Idmatiere : 1      Nom de la matiere : java      Le coefficient de la matiere : 2     L'id de l'enseignant de cette matiere : 5
+
+
+Idmatiere : 3      Nom de la matiere : java      Le coefficient de la matiere : 3     L'id de l'enseignant de cette matiere : 5
+
+Idmatiere : 4      Nom de la matiere : enrepreneuriat      Le coefficient de la matiere : 2     L'id de l'enseignant de cette matiere : 5
+
+
+
+

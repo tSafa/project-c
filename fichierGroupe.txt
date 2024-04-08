@@ -1,0 +1,4 @@
+
+L'id du groupe : 7     le niveau du groupe : fg     La specialite : f     Le diplome : g     Le numero du groupe : 4     L'id de L'etudiant: 2     L'id de L'etudiant: 4     L'id de Groupe Module : 14     L'id de Groupe Module : jk
+L'id du groupe : 78787     le niveau du groupe : niveau1     La specialite : specialite1     Le diplome : diplome1     Le numero du groupe : 7     L'id de L'etudiant: 2     L'id de L'etudiant: 4     L'id de Groupe Module : 14     L'id de Groupe Module : 5     L'id de Groupe Module : jk
+L'id du groupe : 9     le niveau du groupe : niveau1     La specialite : sepacilite1     Le diplome : ING     Le numero du groupe : 2     L'id de L'etudiant: 2     L'id de Groupe Module : I     L'id de Groupe Module : idgm

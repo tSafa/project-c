@@ -1,0 +1,7 @@
+
+L'id du groupe Module : 5     le nom du groupe de module : kl     Le coefficient du groupe module : 2     Id de la matiere ajoutée : 4      Id de la matiere ajoutée : 3 
+L'id du groupe Module : 14     le nom du groupe de module : ml     Le coefficient du groupe module : 2     Id de la matiere ajoutée : 1     Id de la matiere ajoutée : 56565 
+L'id du groupe Module : jk     le nom du groupe de module : ml     Le coefficient du groupe module : 2     Id de la matiere ajoutee : 3     Id de la matiere ajoutee : 1 
+
+L'id du groupe Module : idgm     le nom du groupe de module : nomgm     Le coefficient du groupe module : 2     Id de la matiere ajoutee : 4     Id de la matiere ajoutee : 5 
+L'id du groupe Module : I     le nom du groupe de module : nomgm     Le coefficient du groupe module : 3     Id de la matiere ajoutee : 4     Id de la matiere ajoutee : 1 

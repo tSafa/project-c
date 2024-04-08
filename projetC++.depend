@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1710341787 source:c:\users\rimto\onedrive\documents\projetc++\main.cpp
+	<iostream>
+	<vector>
+	"matiere.h"
+	"Personne.h"
+	"Groupe_Module.h"
+	"groupe.h"
+	"note.h"
+	"fonctions.h"
+
+1710345345 c:\users\rimto\onedrive\documents\projetc++\matiere.h
+	"Personne.h"
+	<fstream>
+	<sstream>
+	<vector>
+
+1709671159 c:\users\rimto\onedrive\documents\projetc++\personne.h
+	<fstream>
+	<vector>
+	<sstream>
+
+1710348932 c:\users\rimto\onedrive\documents\projetc++\groupe_module.h
+	<vector>
+	"matiere.h"
+	"Personne.h"
+	<iterator>
+	<fstream>
+	<sstream>
+	"note.h"
+	<cstring>
+	<regex>
+	<regex>
+
+1710349943 c:\users\rimto\onedrive\documents\projetc++\groupe.h
+	<vector>
+	"Groupe_Module.h"
+	"Personne.h"
+	"matiere.h"
+	<iterator>
+	<fstream>
+	<sstream>
+	"note.h"
+
+1709566949 c:\users\rimto\onedrive\documents\projetc++\note.h
+	"Personne.h"
+	"matiere.h"
+	<fstream>
+	<vector>
+	<algorithm>
+	<numeric>
+
+1708693838 c:\users\rimto\onedrive\documents\projetc++\fonctions.h
+	"note.h"
+	<fstream>
+	<iostream>
+	<vector>
+	<sstream>
+	"fonctions.h"
+

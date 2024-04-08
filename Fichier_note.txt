@@ -1,0 +1,16 @@
+
+La note : 56     Le type d'examen : ds1     L'id de l'etudiant :2     L'id de la matiere : 1
+
+La note : 57     Le type d'examen : examen     L'id de l'etudiant :2     L'id de la matiere : 1
+
+La note : 89     Le type d'examen : ds     L'id de l'etudiant :2     L'id de la matiere : 1
+
+La note : 45     Le type d'examen : ds     L'id de l'etudiant :2     L'id de la matiere : 3
+
+La note : 56     Le type d'examen : examen     L'id de l'etudiant :2     L'id de la matiere : 5
+
+La note : 54     Le type d'examen : examen     L'id de l'etudiant :2     L'id de la matiere : 4
+
+La note : 56     Le type d'examen : exam     L'id de l'etudiant :2     L'id de la matiere : 56565
+
+
