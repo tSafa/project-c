@@ -121,15 +121,14 @@ vector<string> GroupeModule::getidmatbyidgm(string idgm) {
                 idmats.push_back(idmat);
                 idmatPos = line.find(idmatToken, idmatPos);
             }
-            break;
+   
         }
-    }
+    
 
-    groupeFile.close();
 
     if (idmats.empty()) {
-        cout << "Aucun ID de matière trouvé pour le groupe spécifié.\n";
-    }
+        cout << "Aucun ID de matiÃ¨re trouvÃ© pour le groupe spÃ©cifiÃ©
+
 
     return idmats;
 }
@@ -148,8 +147,8 @@ vector<string> GroupeModule::getidmatbyidgm(string idgm) {
 
 
 
-string GroupeModule::getidmatfromfile() {
-    ifstream inFile("Fichier_GroupeModule.txt");
+getidmatfromfile() {
+     inFile("Fichier_GroupeModule.txt");
     string line;
     vector<string> ids;
 
@@ -342,16 +341,16 @@ string GroupeModule::getidgm() {
 
     // Afficher les IDs des groupes module existants
 
-    // Si vous avez besoin de retourner les IDs sous forme de chaîne, vous pouvez les concaténer
-    // et les retourner comme une seule chaîne, séparés par des virgules ou des espaces.
+    // Si vous avez besoin de retourner les IDs sous forme de chaÃ®ne, vous pouvez les concatÃ©ner
+    // et les retourner comme une seule chaÃ®ne, sÃ©parÃ©s par des virgules ou des espaces.
 
-    // Exemple pour retourner une seule chaîne avec des virgules comme séparateurs :
+    // Exemple pour retourner une seule chaÃ®ne avec des virgules comme sÃ©parateurs :
     string idsString;
     for (const string& id : ids) {
         idsString +="  IdGM  :" + id +"     ";
     }
 
-    // Supprimer la dernière virgule si elle existe
+    // Supprimer la derniÃ¨re virgule si elle existe
     if (!idsString.empty()) {
         idsString.pop_back();
     }
@@ -379,12 +378,10 @@ float GroupeModule ::getcoefgmbyid(string IdGM){
             if (coefPos != string::npos) {
                 float coefval = stoi(line.substr(coefPos + 38));
                 return coefval;
-            break;
         }
-        }
+        
 
     }
-inFile.close();
 
     if (idExists==false){
                     cout << "-------------L'ID non existant ------------.\n";
@@ -422,7 +419,6 @@ inFile.close();
 
 
 
-#include <regex>
 
 float GroupeModule::moygm(string idgm) {
     ifstream inFile("Fichier_GroupeModule.txt");
@@ -432,11 +428,11 @@ float GroupeModule::moygm(string idgm) {
     float totalCoefficient = 0;
     float weightedAverage = 0;
 
-    while (!idEx && getline(inFile, line)) {
+    while (!idEx && getline(inFile, line) {
         if (line.find("L'id du groupe Module : " + idgm) != string::npos) {
             idEx = true;
 
-            regex matiereIdRegex(R"(\d+)");
+            regex matiereIdRegex(R"(\d+)")
             smatch match;
 
             while (regex_search(line, match, matiereIdRegex)) {
@@ -565,8 +561,8 @@ void GroupeModule :: cherchergm(){
 
 
  string IdGM;
- cout << "\n Entrer l'id du groupe  module dont vous voulez afficher les données :\n";
-    cin >> IdGM;  // Utilisez le membre de données IdMat de la classe
+ cout << "\n Entrer l'id du groupe  module dont vous voulez afficher les donnÃ©es :\n";
+    cin >> IdGM;  // Utilisez le membre de donnÃ©es IdMat de la classe
 
     ifstream inFile("Fichier_GroupeModule.txt");
     string line;
@@ -574,7 +570,7 @@ void GroupeModule :: cherchergm(){
 
     while (getline(inFile, line)) {
         if (line.find("L'id du groupe Module : " + IdGM) != string::npos) {
-            cout << "\nLes données du groupe module :\n";
+            cout << "\nLes donnÃ©es du groupe module :\n";
             cout << line << endl;
             idExists = true;
             break;
@@ -625,7 +621,7 @@ string IdGM;
 inFile.close();
 
     if (!idExists){
-                    cout << "-------------L'ID non existant ------------.\n";
+                    cout << "-------------L'ID non existant ------------.\n"
     }
     else {
         ofstream outFile("Fichier_GroupeModule.txt", ios::trunc);
@@ -636,7 +632,7 @@ inFile.close();
             }
 
             outFile.close();
-            cout << "\n La suppression est terminée avec succés.\n";
+            cout << "\n La suppression est terminÃ©e avec succÃ©s.\n";
         } else {
             cout << "\nError opening the output file.\n";
         }
@@ -665,10 +661,10 @@ void GroupeModule::modifgm() {
         if (line.find("L'id du groupe Module : " + id) != string::npos) {
             idExists = true;
             groupModuleFound = true; // Indicate that group module line has been found
-            cout << "Entrer les nouvelles informations du groupe Module\n";
-            cout << "\nEntrer le nom modifié:\n";
+            cout << "Entrer les nouvelles informations du groupe Module
+            cout << "\nEntrer le nom modifiÃ©:\n";
             cin >> NomGM;
-            cout << "\nEntrer le coefficient du groupe module modifié:\n";
+            cout << "\nEntrer le coefficient du groupe module modifiÃ©:\n";
             cin >> CoefGM;
 
             // Replace the existing group module line with the modified information
@@ -684,7 +680,7 @@ void GroupeModule::modifgm() {
                 cin >> addAnother;
 
                 // Include the ID of each matiere in the modified group module line
-                line += "     l'id de matiére :" + idmat;
+                line += "     l'id de matiÃ©re :" + idmat;
             } while (addAnother == 'y' || addAnother == 'Y');
         }
         fileContents.push_back(line); // Store the modified or unmodified line
@@ -708,11 +704,11 @@ void GroupeModule::modifgm() {
             }
 
             outFile.close();
-            cout << "\nLes informations ont été modifiées avec succès.\n";
+            cout << "\nLes informations ont Ã©tÃ© modifiÃ©es avec succÃ¨s.\n";
         } else {
             cout << "\nErreur lors de l'ouverture du fichier de sortie.\n";
         }
-    }
+    
 }
 
 
@@ -722,11 +718,11 @@ void GroupeModule::modifgm() {
 
 
 bool GroupeModule ::verifidet(string id){
-    ifstream inFile("Fichier_matiere.txt");
+    ifstream inFile("Fichier_matiere.txt
     string line;
     bool idExists = false;
 
-    // Vérifier si l'ID du matiere existe déjà
+    // VÃ©rifier si l'ID du matiere existe dÃ©jÃ 
     while (getline(inFile, line)) {
         if (line.find("Idmatiere : " + id) != string::npos) {
             idExists = true;
@@ -737,11 +733,11 @@ bool GroupeModule ::verifidet(string id){
     inFile.close();
 
     if (idExists) {
-                    return true;
+                    return true
 }
 if(!idExists){
     return false;
-}
+
 }
 
 void GroupeModule::setidgm(string a){
@@ -787,12 +783,10 @@ vector<matiere> GroupeModule::getliste() const {
 
 ostream& operator<<(ostream& os, const GroupeModule& obj) {
     os << "\nL'id du groupe \n" << obj.getidgm() << "\nles coeffecients du groupe module : \n"
-       << obj.getcoefgm() << "\n Le nom du groupe module : \n" << obj.getmongm() << "\nLa liste des matiere  :\n";
+       << obj.getcoefgm() << "\n Le nom du groupe module : \n" << obj.getmongm() << "\nLa liste des matiere  
 
     for (const matiere& m : obj.getliste()) {
-    os << m << "\n";  // Assuming you have a << operator for the matiere class
-}
-
+    os << m << "\n"
 
     return os;
 }
@@ -830,12 +824,12 @@ void GroupeModule::ajoutGM() {
     inFile.close();
 
     if (idEx) {
-        cout << "L'id du groupe matiere existe déjà, veuillez en choisir un autre.\n";
+        cout << "L'id du groupe matiere existe dÃ©jÃ , veuillez en choisir un autre.\n";
     } else {
         cout << "\nEntrer le nom du groupe de module :\n";
         cin >> NomGM;
         cout << "\nEntrer le coefficient :\n";
-        cin >> CoefGM;
+        cin >> CoefGM
 
         string IdMat;
         char addAnother;
@@ -845,17 +839,17 @@ void GroupeModule::ajoutGM() {
             ifstream matiereFile("Fichier_matiere.txt");
             while (getline(matiereFile, line)) {
                 cout << line << endl;
-            }
+            
             matiereFile.close();
 
-            cout << "\nEntrer l'id de la matiere à ajouter :\n";
+            cout << "\nEntrer l'id de la matiere Ã  ajouter :\n";
             cin >> IdMat;
 
             ifstream matiereCheckFile("Fichier_matiere.txt");
             bool matiereExists = false;
             string matiereInfo;
 
-            // Chercher la ligne correspondant à l'ID saisi dans le fichier
+            // Chercher la ligne correspondant Ã  l'ID saisi dans le fichier
             while (getline(matiereCheckFile, matiereInfo)) {
                 if (matiereInfo.find("Idmatiere : " + IdMat) != string::npos) {
                     matiereExists = true;
@@ -865,7 +859,7 @@ void GroupeModule::ajoutGM() {
             matiereCheckFile.close();
 
             if (matiereExists) {
-                // Enregistrez les données de matiereInfo dans l'objet matiere
+                // Enregistrez les donnÃ©es de matiereInfo dans l'objet matiere
                 matiere m = getmatiereById(IdMat);
                 ajoutmatiere(m);
                 cout << "Matiere ajoutee avec succes.\n";
@@ -884,24 +878,24 @@ void GroupeModule::ajoutGM() {
 
 /*
 matiere GroupeModule::getmatiereById(const string& IdMat) const {
-    matiere result;  // Objet GroupeModule pour stocker les données
+    matiere result;  // Objet GroupeModule pour stocker les donnÃ©es
     ifstream matiereFile("Fichier_matiere.txt");
     string line;
 
     while (getline(matiereFile, line)) {
         if (line.find("Idmatiere : " + IdMat) != string::npos) {
-            // Utilisez une stringstream pour extraire les données de la ligne
+            // Utilisez une stringstream pour extraire les donnÃ©es de la ligne
             istringstream iss(line);
 
             // Ignorer "L'id du groupe Module : "
             string idStr;
             iss >> idStr;
-            // Lisez le reste de la ligne comme données
+            // Lisez le reste de la ligne comme donnÃ©es
             string restOfLine;
             getline(iss, restOfLine);
 
-            // Initialisez l'objet GroupeModule avec les données lues
-            result = matiere(IdMat, restOfLine, 0, enseignant());  // Assurez-vous d'avoir un constructeur adapté
+            // Initialisez l'objet GroupeModule avec les donnÃ©es lues
+            result = matiere(IdMat, restOfLine, 0, enseignant());  // Assurez-vous d'avoir un constructeur adaptÃ©
             break;
         }
     }
@@ -969,13 +963,13 @@ void GroupeModule::enregistrerGM() {
 
         // Iterate over each matiere in ListeMat
         for (const matiere& m : ListeMat) {
-            outFile << "     Id de la matiere ajoutée : " << m.getidmat();
+            outFile << "     Id de la matiere ajoutÃ©e : " << m.getidmat();
         }
 
         outFile << " ";  // Add a space or another delimiter at the end
 
         outFile.close();
-        cout << "Le groupe module a été ajouté au fichier avec succès.\n";
+        cout << "Le groupe module a Ã©tÃ© ajoutÃ© au fichier avec succÃ¨s.\n";
     } else {
         cout << "Erreur lors de l'ouverture du fichier de sortie.\n";
     }
@@ -998,8 +992,6 @@ void GroupeModule::enregistrerGM() {
         outFile.close();
         cout << "Le groupe module a ete ajoute au fichier avec succes.\n";
     } else {
-        cout << "Erreur lors de l'ouverture du fichier de sortie.\n";
+        cout "Erreur lors de l'ouverture du fichier de sortie.\n"
     }
-}
 
-#endif // GROUPE_MODULE_H_INCLUDED
