@@ -5,13 +5,12 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
-#include <numeric>
 
 class note{
     matiere m;
     etudiant et;
     float note1;
-    string type;
+    string Type;
     vector<pair<string, float>> tableauNotes;
 public :
     note();
@@ -60,15 +59,15 @@ float note::MoyMat(string idmat) {
         float moy = somme / nbNote;
         return moy;
     } else {
-        cout << "\nAucune note trouvée pour l'ID de matiere spécifié.\n";
+        cout << "\nAucune note trouvÃ©e pour l'ID de matiere spÃ©cifiÃ©.\n";
         return 0;
     }
 }
 
 void note ::recherchenote(){
     int id;
- cout << "\n Entrer l'id de l'etudiant dont vous voulez afficher les données :\n";
-    cin >> id;  // Utilisez le membre de données IdMat de la classe
+ cout << "\n Entrer l'id de l'etudiant dont vous voulez afficher les donnÃ©es :\n";
+    cin >> id;  // Utilisez le membre de donnÃ©es IdMat de la classe
 
     ifstream inFile("Fichier_note.txt");
     string line;
@@ -76,7 +75,7 @@ void note ::recherchenote(){
 
     while (getline(inFile, line)) {
         if (line.find("L'id de l'etudiant :" + to_string(id) + " ") != string::npos) {
-            cout << "\nLes données de la note :\n";
+            cout << "\nLes donnÃ©es de la note :\n";
             cout << line << endl;
             idExists = true;
             break;
@@ -86,7 +85,7 @@ void note ::recherchenote(){
     inFile.close();
 
     if (!idExists) {
-        cout << "-------------L'ID non existant ------------.\n";
+        cout << "-------------L'ID non existant ------------.
     }
 
 
@@ -103,7 +102,6 @@ cin >>id;
             tableauNotes.begin(),
             tableauNotes.end(),
             [id](const std::pair<std::string, float>& pair) {
-                return pair.first == to_string(id);
             }),
         tableauNotes.end()
     );
@@ -133,7 +131,7 @@ while (getline(inFile, line)) {
             }
 
             outFile.close();
-            cout << "\n La suppression est terminée avec succés.\n";
+            cout << "\n La suppression est terminÃ©e avec succÃ©s.\n";
         } else {
             cout << "\nError opening the output file.\n";
         }
@@ -151,7 +149,7 @@ while (getline(inFile, line)) {
 
 
 
-void note::modifnote() {
+ note::modifnote() {
     int id;
     cout << "\nEntrer l'id de l'etudiant que vous voulez changer la note:\n";
     cin >> id;
@@ -161,13 +159,13 @@ void note::modifnote() {
     vector<string> fileContents;
     bool idExists = false;
 
-    while (getline(inFile, line)) {
+    while getline(inFile, line) {
         if (line.find("L'id de l'etudiant :" + to_string(id) + " ") != string::npos) {
             idExists = true;
             cout << "Entrer les nouvelles informations du note\n";
-            cout << "\nEntrer la note modifié:\n";
+            cout << "\nEntrer la note modifiÃ©:\n";
             cin >> note1;
-            cout << "\nEntrer le type modifié:\n";
+            cout << "\nEntrer le type modifiÃ©:\n";
             cin >> type;
             string idmat;
 cout <<"\nEntrer l'id de la matiere dont vous modifiez la note :\n";
@@ -182,7 +180,7 @@ ifstream matiereCheckFile("Fichier_matiere.txt");
     }
     matiereCheckFile.close();
     if (!matExists) {
-        cout << "\nL'ID de la matière n'existe pas. Veuillez entrer un ID valide.\n";
+        cout << "\nL'ID de la matiÃ¨re n'existe pas. Veuillez entrer un ID valide.\n";
         return; // Exiting the function if the subject ID is not found
     }
 if(matExists){
@@ -190,12 +188,12 @@ if(matExists){
 
 
             // Update the internal data of the note object
-            m.setidmat(idmat);  // Replace with appropriate method to set the ID of the subject
-            et.setId(id);  // Assuming et.setId exists to set the ID of the student
-for (auto &pair : tableauNotes) {
+            m.setidmat(idmat)  // Replace with appropriate method to set the ID of the subject
+            et.setId(id)  // Assuming et.setId exists to set the ID of the student
+for ( : tableauNotes) {
     if (pair.first == idmat) {
         pair.second = note1;  // Update the note value in the pair
-        break;
+      
     }
 }
 
@@ -218,12 +216,12 @@ for (auto &pair : tableauNotes) {
                 outFile << content << "\n";
             }
 
-            cout << "\nLes informations ont été modifiées avec succès.\n";
+            cout << "\nLes informations ont Ã©tÃ© modifiÃ©es avec succÃ¨s.\n";
         } else {
             cout << "\nError opening the output file.\n";
         }
 
-        outFile.close();
+
     }
 }
 
@@ -282,7 +280,7 @@ void note::ajoutnote() {
 
     // Reading student data for display
     ifstream studentFile("Fichier_etudiant.txt");
-    cout << "\nDonnées des étudiants :\n";
+    cout << "\nDonnÃ©es des Ã©tudiants :\n";
     while (getline(studentFile, line)) {
         cout << line << endl;
     }
@@ -290,7 +288,7 @@ void note::ajoutnote() {
 
     // Checking for student ID
     int idetudiant;
-    cout << "\nVeuillez entrer l'id de l'étudiant :\n";
+    cout << "\nVeuillez entrer l'id de l'Ã©tudiant :\n";
     cin >> idetudiant;
     ifstream studentCheckFile("Fichier_etudiant.txt");
     bool etuExists = false;
@@ -304,16 +302,16 @@ void note::ajoutnote() {
 
     // If student ID does not exist, print an error message
     if (!etuExists) {
-        cout << "\nL'ID de l'étudiant n'existe pas. Veuillez entrer un ID valide.\n";
-        return; // Exiting the function if the student ID is not found
+        cout << "\nL'ID de l'Ã©tudiant n'existe pas. Veuillez entrer un ID valide.\n";
+        return
     }
 
     // Student ID exists, move on to check subject ID
-    et.setId(idetudiant); // Assuming et.setId exists to set the ID of the student
+    et.setIdidetudiant; // Assuming et.setId exists to set the ID of the student
 
     // Reading subject data for display
     ifstream matiereFile("Fichier_matiere.txt");
-    cout << "\nLa liste des matières :\n";
+    cout << "\nLa liste des matiÃ¨res :\n";
     while (getline(matiereFile, line)) {
         cout << line << endl;
     }
@@ -321,7 +319,7 @@ void note::ajoutnote() {
 
     // Checking for subject ID
     string idmatiere;
-    cout << "\nVeuillez entrer l'id de la matière :\n";
+    cout << "\nVeuillez entrer l'id de la matiÃ¨re :\n";
     cin >> idmatiere;
     ifstream matiereCheckFile("Fichier_matiere.txt");
     bool matExists = false;
@@ -335,30 +333,30 @@ void note::ajoutnote() {
 
     // If subject ID does not exist, print an error message
     if (!matExists) {
-        cout << "\nL'ID de la matière n'existe pas. Veuillez entrer un ID valide.\n";
+        cout << "\nL'ID de la matiÃ¨re n'existe pas. Veuillez entrer un ID valide.\n";
         return; // Exiting the function if the subject ID is not found
     }
 
     // Both IDs exist, proceed to add the note to the file
     m.setid(idmatiere); // Assuming m.setid exists to set the ID of the subject
-    tableauNotes.push_back(make_pair(idmatiere, note1));
+    tableauNotes.push_back(make_pair(idmatiere, note1)
 
     enregistrer(); // Proceed to save the note
 }
 
 
-fstream fichier_note;
+fichier_note;
 void note ::enregistrer(){
     ofstream outFile("Fichier_note.txt", ios::app);
     if (outFile.is_open()) {
 
-outFile << "\nLa note : " << note1 << "     Le type d'examen : " << type << "     L'id de l'etudiant :" << et.getid() <<"     L'id de la matiere : "<<m.getidmat()<< endl;
+outFile << "\nLa note : " << note1 << "     Le type d'examen : " << type <<      L'id de l'etudiant : << et.getid() <<"     L'id de la matiere : "<<m.getidmat()<< endl
     outFile.close();
-    cout << "La note a été ajoutée au fichier avec succès.\n";
+    cout << "La note a Ã©tÃ© ajoutÃ©e au fichier avec succÃ¨s.\n";
     } else {
         cout << "Erreur lors de l'ouverture du fichier de sortie.\n";
-    }
+    
 
 
-}
-#endif // NOTE_H_INCLUDED
+
+
